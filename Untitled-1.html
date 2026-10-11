@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Favorite Girl ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:#573d52;background:linear-gradient(135deg,#fff5f8,#f9f1ff,#fff0f5);overflow-x:hidden;min-height:100vh}
+button{font-family:inherit;cursor:pointer;border:0}
+button:focus-visible{outline:3px solid #b06bca;outline-offset:4px}
+.heart{position:fixed;bottom:-40px;color:#ff8fab;opacity:.45;pointer-events:none;z-index:0;animation:floatUp linear forwards}
+@keyframes floatUp{0%{transform:translateY(0);opacity:0}15%{opacity:.55}100%{transform:translateY(-115vh) rotate(35deg);opacity:0}}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:70px 20px;position:relative;text-align:center;z-index:1}
+.hero-card{width:100%;max-width:820px;padding:60px 28px;border:1px solid #ffffffd9;background:#ffffff8c;backdrop-filter:blur(16px);border-radius:36px;box-shadow:0 25px 80px #c470a026;animation:fadeUp 1s ease both}
+.eyebrow{display:inline-block;padding:10px 18px;background:#ffe5ef;color:#c94d82;border-radius:50px;font-size:12px;letter-spacing:2px;font-weight:700;text-transform:uppercase;margin-bottom:25px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(42px,8vw,78px);font-weight:500;line-height:1.12;margin-bottom:18px;color:#754a70}
+.hero h1 span{font-family:'Great Vibes',cursive;color:#ed5c91;font-size:1.18em}
+.hero p{font-size:16px;line-height:1.9;max-width:570px;margin:0 auto;color:#816b80}
+.hero-heart{font-size:45px;display:inline-block;margin-bottom:18px;animation:heartbeat 1.5s infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.15)}28%{transform:scale(1)}42%{transform:scale(1.12)}70%{transform:scale(1)}}
+.primary-button{display:inline-block;margin-top:30px;padding:15px 28px;border-radius:50px;color:white;font-size:14px;font-weight:700;background:linear-gradient(135deg,#ff91b4,#d78cf2);box-shadow:0 10px 25px #e277b14d;transition:transform .25s}
+.primary-button:hover{transform:translateY(-4px)}
+.scroll-note{margin-top:35px;font-size:12px;color:#b28ba9;letter-spacing:1px}
+section.content-section{padding:85px 20px;position:relative;z-index:1}
+.section-inner{max-width:900px;margin:auto}
+.section-heading{text-align:center;margin-bottom:40px}
+.section-heading .mini-heart{font-size:25px}
+.section-heading h2{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,43px);color:#754a70;font-weight:500;margin:12px 0}
+.section-heading p{color:#947b91;line-height:1.8;font-size:14px}
+.letter-card{max-width:730px;margin:auto;background:#ffffffc7;border:1px solid white;border-radius:26px;padding:clamp(25px,6vw,48px);box-shadow:0 15px 45px #aa6e991a;position:relative}
+.letter-card:before{content:"♡";position:absolute;top:15px;right:25px;font-size:42px;color:#ffd0e1}
+.letter-card h3{font-family:'Great Vibes',cursive;color:#e36e9d;font-size:39px;font-weight:400;margin-bottom:20px}
+.letter-card p{font-size:15px;line-height:2;margin-bottom:15px;color:#735c70}
+.signature{font-family:'Great Vibes',cursive;font-size:32px;color:#e36e9d;margin-top:22px}
+.motivation-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.motivation-card{background:#ffffffb8;border:1px solid white;border-radius:24px;padding:27px 20px;text-align:center;box-shadow:0 12px 30px #aa6e9912;transition:transform .25s}
+.motivation-card:hover{transform:translateY(-7px)}
+.motivation-card .emoji{font-size:36px;margin-bottom:16px}
+.motivation-card h3{font-family:'Playfair Display',serif;color:#805779;font-size:20px;margin-bottom:10px}
+.motivation-card p{color:#90798b;font-size:13px;line-height:1.8}
+.hug-card{text-align:center;background:linear-gradient(135deg,#ffe2eecf,#efe2ffcf);padding:45px 25px;border:1px solid white;border-radius:30px}
+.hug-card h2{font-family:'Playfair Display',serif;font-weight:500;font-size:32px;margin-bottom:12px;color:#805779}
+.hug-card p{color:#90798b;font-size:14px;line-height:1.8}
+.hug-button{background:white;color:#d75d92;padding:14px 24px;border-radius:50px;margin-top:23px;font-weight:700;box-shadow:0 8px 20px #af6ba01f}
+.hug-message{min-height:54px;max-width:550px;margin:22px auto 0;color:#a4497b;font-family:'Playfair Display',serif;font-size:20px;line-height:1.6}
+.checklist{max-width:700px;margin:auto;background:#ffffffbf;padding:30px;border-radius:26px;border:1px solid white;box-shadow:0 12px 35px #aa6e9914}
+.checklist-intro{font-size:14px;color:#947b91;margin-bottom:22px;line-height:1.7}
+.task{display:flex;align-items:center;gap:13px;padding:15px 0;border-bottom:1px solid #f4e6ef;color:#765d73;font-size:14px;cursor:pointer}
+.task:last-of-type{border-bottom:none}
+.task input{width:19px;height:19px;accent-color:#e777a8;flex-shrink:0}
+.task:has(input:checked) span{text-decoration:line-through;opacity:.55}
+.progress-info{display:flex;justify-content:space-between;gap:10px;margin-top:25px;margin-bottom:10px;font-size:12px;font-weight:700;color:#b16492}
+.progress-track{height:10px;width:100%;background:#f5e4ef;border-radius:20px;overflow:hidden}
+.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#ff8fab,#c79af8);border-radius:20px;transition:width .3s ease}
+
+/* Five-breath exercise */
+.breathing-box{position:relative;overflow:hidden;max-width:760px;margin:auto;padding:35px 24px;text-align:center;border:1px solid white;border-radius:32px;background:linear-gradient(145deg,#ffffffe6,#ffebf6d9,#f0e7ffe6);box-shadow:0 20px 65px #c178ae21}
+.breathing-intro>span{font-size:35px}
+.breathing-intro h3{margin:12px 0;color:#805779;font-family:'Playfair Display',serif;font-weight:500;font-size:25px}
+.breathing-intro p{max-width:470px;margin:auto;color:#947b91;font-size:14px;line-height:1.9}
+.breathing-scene{position:relative;display:flex;justify-content:center;align-items:center;min-height:300px;margin:12px 0}
+.glow{position:absolute;width:210px;height:210px;border-radius:50%;filter:blur(35px);pointer-events:none}
+.glow-one{background:#ff91be52;transform:translate(-35px,-10px)}
+.glow-two{background:#bb97ff4d;transform:translate(35px,15px)}
+.breathing-circle{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:170px;height:170px;flex-shrink:0;border-radius:50%;background:linear-gradient(145deg,#ffc4dc,#e3c8ff 55%,#ffd7e9);box-shadow:0 0 25px #f091c973,0 0 65px #c197ff4d,inset 0 0 20px #ffffffbf;transform:scale(1);transition:transform 4s ease-in-out,box-shadow 4s ease-in-out}
+.breathing-circle.inhaling{transform:scale(1.35);box-shadow:0 0 35px #f091c9a6,0 0 90px #c197ff80,inset 0 0 30px #fffffff2}
+.breathing-circle.exhaling{transform:scale(.85);box-shadow:0 0 15px #f091c940,0 0 35px #c197ff33,inset 0 0 15px #ffffffb3}
+.circle-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;color:#795779}
+#breathingEmoji{font-size:25px;margin-bottom:6px}
+#breathingInstruction{font-family:'Playfair Display',serif;font-size:21px;font-weight:500}
+#breathingSeconds{margin-top:7px;font-size:10px;letter-spacing:.5px;color:#896d8c}
+.breath-count{margin-top:8px}
+.count-label{color:#b18ca8;font-size:10px;font-weight:700;letter-spacing:2px}
+.breath-dots{display:flex;justify-content:center;gap:12px;margin:17px 0 12px}
+.breath-dot{width:12px;height:12px;border-radius:50%;background:#eadcf0;border:2px solid white;transition:all .3s ease}
+.breath-dot.active{background:#ff91b4;transform:scale(1.25);box-shadow:0 0 12px #ff91b499}
+.breath-dot.completed{background:#b89ae9}
+#breathProgress{color:#947b91;font-size:12px}
+.breath-encouragement{max-width:470px;min-height:45px;margin:22px auto 0;color:#a35f91;font-family:'Playfair Display',serif;font-size:17px;line-height:1.7}
+.breathing-start{margin-top:10px}
+.breathing-footnote{max-width:470px;margin:20px auto 0;color:#a18ba0;font-size:11px;line-height:1.8}
+.surprise-card{text-align:center;padding:50px 25px;border-radius:32px;background:linear-gradient(140deg,#ffe2ed,#f0e2ff,#fff0f6);border:1px solid white}
+.surprise-card h2{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(27px,5vw,40px);color:#805779;margin-bottom:15px}
+.surprise-card p{color:#90798b;font-size:14px;line-height:1.8}
+.surprise-message{display:none;max-width:620px;margin:28px auto 0;background:#ffffffb3;border-radius:24px;padding:28px;animation:fadeUp .6s ease both}
+.surprise-message.show{display:block}
+.surprise-message .big-heart{font-size:45px;margin-bottom:15px}
+.surprise-message p{color:#795671;font-size:15px;line-height:2}
+footer{position:relative;z-index:1;text-align:center;padding:40px 20px 125px;color:#a78ca3;font-size:12px;line-height:2}
+footer .footer-heart{color:#ef80ac;font-size:20px}
+.music-player{position:fixed;z-index:100;bottom:20px;right:20px;width:min(335px,calc(100vw - 30px));display:flex;align-items:center;gap:12px;padding:12px;border-radius:23px;background:#ffffffe0;border:1px solid white;backdrop-filter:blur(18px);box-shadow:0 12px 40px #a9629438}
+.album-art{width:52px;height:52px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:16px;background:linear-gradient(135deg,#ffb8d2,#d7baff);font-size:26px}
+.music-details{min-width:0;flex:1}
+.music-title{font-size:13px;font-weight:700;color:#805779;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.music-subtitle{font-size:11px;color:#b18ca8;margin-top:4px}
+.equalizer{display:flex;align-items:center;gap:3px;height:14px;margin-top:5px}
+.equalizer span{display:block;width:3px;height:4px;border-radius:5px;background:#e77eac}
+.music-player.playing .equalizer span{animation:equalize .7s ease-in-out infinite alternate}
+.music-player.playing .equalizer span:nth-child(2){animation-delay:.2s}
+.music-player.playing .equalizer span:nth-child(3){animation-delay:.4s}
+.music-player.playing .equalizer span:nth-child(4){animation-delay:.1s}
+@keyframes equalize{from{height:3px}to{height:14px}}
+.music-button{width:45px;height:45px;flex-shrink:0;border-radius:50%;background:linear-gradient(135deg,#ff91b4,#c998f6);color:white;font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 14px #d378b140}
+.music-error{display:none;color:#c75b83;font-size:11px;margin-top:4px;line-height:1.4}
+.music-error.show{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:650px){.hero-card{padding:45px 20px;border-radius:28px}.hero p{font-size:14px}.motivation-grid{grid-template-columns:1fr}.motivation-card{padding:25px}section.content-section{padding:65px 17px}.checklist{padding:22px 18px}.letter-card{padding:30px 22px}.music-player{right:12px;bottom:12px}}
+@media(max-width:500px){.breathing-box{padding:30px 17px}.breathing-scene{min-height:260px}.breathing-circle{width:155px;height:155px}.breathing-circle.inhaling{transform:scale(1.2)}.breath-dots{gap:10px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}.breathing-circle{transition:none}}
+</style>
+</head>
+
+<body>
+<div id="hearts-container" aria-hidden="true"></div>
+
+<header class="hero" id="home">
+  <div class="hero-card">
+    <div class="hero-heart">💗</div>
+    <div class="eyebrow">A little reminder for my favorite person</div>
+    <h1>Hey, my <span>beautiful girl</span> ♡</h1>
+    <p>I know tomorrow might feel a little scary. I know your mind might be full of questions and worries. So I made you this little corner of the world, just to remind you how amazing you are.</p>
+    <p style="margin-top:14px">Take a deep breath, sweetheart. You don't have to be perfect. You just have to be you. 🌷</p>
+    <button class="primary-button" onclick="scrollToLetter()">Open your little love letter ♡</button>
+    <div class="scroll-note">MADE WITH ALL MY LOVE · JUST FOR YOU</div>
+  </div>
+</header>
+
+<section class="content-section" id="letter">
+  <div class="section-inner">
+    <div class="section-heading"><div class="mini-heart">💌</div><h2>A letter from my heart</h2><p>Something I want you to remember before your exam.</p></div>
+    <div class="letter-card">
+      <h3>My sweetest girl,</h3>
+      <p>First of all, I wish I could be next to you right now, hold your hand, and tell you that everything is going to be okay. </p>
+      <p>I know you've been trying. I know you get stressed, overthink everything, and feel like you need to know every single thing before you can feel ready. But my beautiful , please remember that one exam cannot measure your intelligence, your worth, or the beautiful person you are.</p>
+      <p>You are so much more capable than your worries make you believe. Look at everything you've already learned and everything you've overcome. You didn't come this far for nothing.</p>
+      <p>Tomorrow, walk into that exam room with your head held high. Read every question carefully, take your time, and do your best. If a question feels difficult, breathe, skip it for a moment, and come back to it. One question at a time, my love.</p>
+      <p>And listen to me carefully: whatever happens tomorrow, you will still have me cheering for you, believing in you, and being proud of you.</p>
+      <p>Now go show that exam what my girl can do. And after you're finished, I hope you'll give yourself the same kindness you always deserve. ❤️</p>
+      <div class="signature">Forever cheering for you ♡</div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="section-inner">
+    <div class="section-heading"><div class="mini-heart">✨</div><h2>Three little things to remember</h2><p>Keep these close to your heart, my love.</p></div>
+    <div class="motivation-grid">
+      <div class="motivation-card"><div class="emoji">🌷</div><h3>You are capable</h3><p>You've learned more than you think. Trust yourself, your preparation, and the effort you've already put in.</p></div>
+      <div class="motivation-card"><div class="emoji">🦋</div><h3>You can be nervous</h3><p>Being nervous doesn't mean you're not ready. You can feel scared and still do something amazing.</p></div>
+      <div class="motivation-card"><div class="emoji">💖</div><h3>You are enough</h3><p>Your grade is a result, not your identity. You deserve love, rest, and happiness either way.</p></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="content-section">
+  <div class="section-inner">
+    <div class="section-heading"><div class="mini-heart">📝</div><h2>Your calm little checklist</h2><p>No panic, no rushing. Just one little thing at a time.</p></div>
+    <div class="checklist">
+      <p class="checklist-intro">My love, you don't need to do everything at once. Tick each item when it's done. You've got this! 🌸</p>
+      <label class="task"><input type="checkbox" onchange="updateProgress()"><span>Review the most important concepts and notes.</span></label>
+      <label class="task"><input type="checkbox" onchange="updateProgress()"><span>Practice a few questions instead of panicking.</span></label>
+      <label class="task"><input type="checkbox" onchange="updateProgress()"><span>Prepare my pens, ID, and everything I need.</span></label>
+      <label class="task"><input type="checkbox" onchange="updateProgress()"><span>Drink some water and eat something nourishing.</span></label>
+      <label class="task"><input type="checkbox" onchange="updateProgress()"><span>Take a break and give my brain some rest.</span></label>
+      <label class="task"><input type="checkbox" onchange="updateProgress()"><span>Get enough sleep to feel fresh tomorrow.</span></label>
+      <div class="progress-info"><span>Your little progress 💗</span><span id="progressText">0 of 6 completed</span></div>
+      <div class="progress-track" role="progressbar" aria-label="Exam preparation checklist" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
+      <p id="progressMessage" style="margin-top:15px;font-size:13px;color:#b16492">Every little step counts, sweetheart. ♡</p>
+    </div>
+  </div>
+</section>
+
+<!-- LET'S BREATHE TOGETHER: FIVE SLOW BREATHS -->
+<section class="content-section" id="breathe-together">
+  <div class="section-inner">
+    <div class="section-heading">
+      <div class="mini-heart">🌷</div>
+      <h2>Let's breathe together</h2>
+      <p>Just you, me, and five peaceful breaths. You don't have to figure everything out right now, baby. ♡</p>
+    </div>
+    <div class="breathing-box">
+      <div class="breathing-intro">
+        <span>☁️</span>
+        <h3>A little moment just for you</h3>
+        <p>Relax your shoulders, unclench your jaw, and let yourself be here. Follow the glowing circle at your own comfortable pace.</p>
+      </div>
+      <div class="breathing-scene">
+        <div class="glow glow-one"></div><div class="glow glow-two"></div>
+        <div class="breathing-circle" id="calmCircle">
+          <div class="circle-inner">
+            <span id="breathingEmoji">♡</span>
+            <span id="breathingInstruction">Ready?</span>
+            <small id="breathingSeconds">Five breaths for you</small>
+          </div>
+        </div>
+      </div>
+      <div class="breath-count">
+        <div class="count-label">YOUR LITTLE JOURNEY</div>
+        <div class="breath-dots" id="breathDots">
+          <span class="breath-dot"></span><span class="breath-dot"></span><span class="breath-dot"></span><span class="breath-dot"></span><span class="breath-dot"></span>
+        </div>
+        <p id="breathProgress">5 peaceful breaths waiting for you ♡</p>
+      </div>
+      <p class="breath-encouragement" id="breathEncouragement">There's no need to rush. You're doing just fine, sweetheart.</p>
+      <button class="primary-button breathing-start" id="breathingStart" onclick="startFiveBreaths()">Begin our quiet moment ♡</button>
+      <p class="breathing-footnote">Breathe gently and naturally. No need to take extra-deep breaths. If you feel dizzy or uncomfortable, stop and breathe normally.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="section-inner">
+    <div class="surprise-card">
+      <div style="font-size:48px;margin-bottom:18px">🎀</div>
+      <h2>One last little surprise...</h2>
+      <p>There's something I really want you to hear. But first, you have to open your surprise. ♡</p>
+      <button class="primary-button" onclick="revealSurprise()">Open my secret message 💌</button>
+      <div class="surprise-message" id="surpriseMessage">
+        <div class="big-heart">❤️</div>
+        <p>Hey, beautiful. Look at me for a second. You are not your anxiety. You are not your worst fear. You are not one exam, one mistake, or one difficult day.</p>
+        <p style="margin-top:15px">You are the girl who keeps trying, even when things feel hard. The girl who deserves to feel proud of herself. The girl whose smile can make my whole day better.</p>
+        <p style="margin-top:15px">Tomorrow, do your best. That's all I could ever ask of you. And when the exam is over, take a deep breath and remember that you made it through.</p>
+        <p style="margin-top:15px;font-family:'Great Vibes',cursive;font-size:32px;color:#e36e9d">I believe in you, my girl. Always. ♡</p>
+        <p style="margin-top:15px">Now give me a little smile. That's my favorite thing. 💗</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="footer-heart">♡</div><p>Made with love, just for you.</p><p>Whatever tomorrow brings, you're never alone. 💗</p></footer>
+
+<!-- MUSIC PLAYER -->
+<div class="music-player" id="musicPlayer">
+  <div class="album-art">💗</div>
+  <div class="music-details">
+    <div class="music-title">Just for my girl ♡</div>
+    <div class="music-subtitle" id="musicStatus">A little song for you</div>
+    <div class="equalizer" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="music-error" id="musicError" aria-live="polite">Check your music link.</div>
+  </div>
+  <button class="music-button" id="musicButton" onclick="toggleMusic()" aria-label="Play music" title="Play or pause music">▶</button>
+</div>
+
+<!-- IMPORTANT: Replace the URL below with your direct audio/MP3 link -->
+<audio id="loveSong" src="01 - you are my sunshine.mp3" preload="none" loop></audio>
+
+<script>
+/* Floating hearts */
+const heartsContainer=document.getElementById("hearts-container");
+function createHeart(){
+  const heart=document.createElement("div");
+  heart.className="heart";
+  const symbols=["♡","♥","💕","✧","💗"];
+  heart.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(14+Math.random()*23)+"px";
+  heart.style.animationDuration=(8+Math.random()*9)+"s";
+  heartsContainer.appendChild(heart);
+  setTimeout(()=>heart.remove(),18000);
+}
+setInterval(createHeart,650);
+for(let i=0;i<12;i++)setTimeout(createHeart,i*250);
+
+/* Love letter navigation */
+function scrollToLetter(){
+  document.getElementById("letter").scrollIntoView({behavior:"smooth"});
+}
+
+
+/* Checklist progress */
+function updateProgress(){
+  const boxes=document.querySelectorAll(".task input");
+  const checked=document.querySelectorAll(".task input:checked").length;
+  const total=boxes.length;
+  document.getElementById("progressFill").style.width=(checked/total*100)+"%";
+  document.getElementById("progressText").textContent=checked+" of "+total+" completed";
+  document.getElementById("progressBar").setAttribute("aria-valuenow",checked);
+  const message=document.getElementById("progressMessage");
+  if(checked===total)message.textContent="Look at you, superstar! Now rest and be kind to yourself. 💗";
+  else if(checked>=4)message.textContent="You're doing so well! You're getting there, sweetheart. 🌸";
+  else if(checked>=1)message.textContent="Every little step counts. I'm proud of you for trying. ♡";
+  else message.textContent="Every little step counts, sweetheart. ♡";
+}
+
+/* Five slow breaths: 4 seconds in, 6 seconds out */
+let fiveBreathsRunning=false;
+let breathingTimers=[];
+function clearFiveBreathTimers(){
+  breathingTimers.forEach(timer=>clearTimeout(timer));
+  breathingTimers=[];
+}
+function startFiveBreaths(){
+  const circle=document.getElementById("calmCircle");
+  const instruction=document.getElementById("breathingInstruction");
+  const seconds=document.getElementById("breathingSeconds");
+  const emoji=document.getElementById("breathingEmoji");
+  const progress=document.getElementById("breathProgress");
+  const encouragement=document.getElementById("breathEncouragement");
+  const button=document.getElementById("breathingStart");
+  const dots=document.querySelectorAll(".breath-dot");
+
+  if(fiveBreathsRunning){
+    fiveBreathsRunning=false;
+    clearFiveBreathTimers();
+    circle.classList.remove("inhaling","exhaling");
+    instruction.textContent="Ready?";
+    seconds.textContent="Five breaths for you";
+    emoji.textContent="♡";
+    progress.textContent="Paused. You can begin again whenever you're ready.";
+    encouragement.textContent="Take your time, sweetheart. There's no rush. ♡";
+    button.textContent="Begin our quiet moment ♡";
+    dots.forEach(dot=>dot.classList.remove("active","completed"));
+    return;
+  }
+
+  fiveBreathsRunning=true;
+  button.textContent="Pause our moment";
+  const inhaleTime=4000;
+  const exhaleTime=6000;
+  const totalBreaths=5;
+
+  function later(callback,delay){
+    breathingTimers.push(setTimeout(callback,delay));
+  }
+
+  function breathe(number){
+    if(!fiveBreathsRunning)return;
+
+    if(number>totalBreaths){
+      fiveBreathsRunning=false;
+      circle.classList.remove("inhaling","exhaling");
+      instruction.textContent="You did it!";
+      seconds.textContent="I'm proud of you ♡";
+      emoji.textContent="💗";
+      progress.textContent="All five breaths complete!";
+      encouragement.textContent="Notice how you feel. You can take things one question at a time, my love.";
+      button.textContent="Let's breathe again ♡";
+      dots.forEach(dot=>{
+        dot.classList.remove("active");
+        dot.classList.add("completed");
+      });
+      return;
+    }
+
+    dots.forEach((dot,index)=>{
+      dot.classList.remove("active");
+      if(index<number-1)dot.classList.add("completed");
+      else dot.classList.remove("completed");
+    });
+    dots[number-1].classList.add("active");
+    progress.textContent="Breath "+number+" of "+totalBreaths;
+
+    if(number===1)encouragement.textContent="There's nothing you need to solve in this moment. Just breathe. ♡";
+    else if(number===3)encouragement.textContent="You're doing beautifully. Let your shoulders soften. 🌷";
+    else if(number===5)encouragement.textContent="One last gentle breath, sweetheart. You're safe to slow down. 💗";
+    else encouragement.textContent="In this moment, you don't need to be perfect. Just be here. ♡";
+
+    instruction.textContent="Breathe in";
+    seconds.textContent="Gently · 4 seconds";
+    emoji.textContent="✧";
+    circle.classList.remove("exhaling");
+    circle.classList.add("inhaling");
+
+    later(()=>{
+      if(!fiveBreathsRunning)return;
+      instruction.textContent="Breathe out";
+      seconds.textContent="Slowly · 6 seconds";
+      emoji.textContent="♡";
+      circle.classList.remove("inhaling");
+      circle.classList.add("exhaling");
+    },inhaleTime);
+
+    later(()=>{
+      if(fiveBreathsRunning)breathe(number+1);
+    },inhaleTime+exhaleTime);
+  }
+  breathe(1);
+}
+
+/* Surprise message */
+function revealSurprise(){
+  document.getElementById("surpriseMessage").classList.add("show");
+  document.getElementById("surpriseMessage").scrollIntoView({behavior:"smooth",block:"center"});
+  for(let i=0;i<12;i++)setTimeout(createHeart,i*140);
+}
+
+/* Music button */
+const loveSong=document.getElementById("loveSong");
+const musicButton=document.getElementById("musicButton");
+const musicPlayer=document.getElementById("musicPlayer");
+const musicStatus=document.getElementById("musicStatus");
+const musicError=document.getElementById("musicError");
+
+function toggleMusic(){
+  musicError.classList.remove("show");
+  if(loveSong.paused){
+    musicStatus.textContent="Getting your song ready...";
+    loveSong.play().then(()=>{
+      musicButton.textContent="Ⅱ";
+      musicButton.setAttribute("aria-label","Pause music");
+      musicPlayer.classList.add("playing");
+      musicStatus.textContent="Playing just for you ♡";
+    }).catch(()=>{
+      musicButton.textContent="▶";
+      musicPlayer.classList.remove("playing");
+      musicStatus.textContent="Your song couldn't play";
+      musicError.textContent="Use a direct audio link that your browser can play.";
+      musicError.classList.add("show");
+    });
+  }else{
+    loveSong.pause();
+    musicButton.textContent="▶";
+    musicButton.setAttribute("aria-label","Play music");
+    musicPlayer.classList.remove("playing");
+    musicStatus.textContent="Paused, my love ♡";
+  }
+}
+loveSong.addEventListener("ended",()=>{
+  musicButton.textContent="▶";
+  musicButton.setAttribute("aria-label","Play music");
+  musicPlayer.classList.remove("playing");
+  musicStatus.textContent="A little song for you";
+});
+</script>
+</body>
+</html>
